@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>tema8</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="tema8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link href="plugins/video-js/video-js.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/blog_single.css">
+    <link rel="stylesheet" type="text/css" href="styles/blog_single_responsive.css">
+</head>
+<body>
+
+<div class="super_container">
+
+
+    <header class="header">
+
+        <div class="header_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo_container mr-auto">
+                                <a href="#">
+                                    <div class="logo_text"><a href="index.html">Основы программирования</a></div>
+                                </a>
+                            </div>
+                            <nav class="main_nav_contaner">
+                                <ul class="main_nav">
+                                    <li class="active"><a href="index.html">Главная</a></li>
+                                    <li><a href="courses.html">Темы</a></li>
+                                    <li><a href="instructors.html">Инструкция</a></li>
+                                    <li><a href="blog.html">Новости</a></li>
+                                </ul>
+                            </nav>
+                            <div class="header_content_right ml-auto text-right">
+                                <div class="header_search">
+                                    <div class="search_form_container">
+                                        <form action="#" id="search_form" class="search_form trans_400">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="blog_top_image">
+        <div class="blog_top">
+            <div class="blog_background parallax-window" data-parallax="scroll" data-image-src="images/python_logo_back.jpeg" data-speed="0.8"></div>
+        </div>
+    </div>
+
+    <div class="blog_container">
+        <div class="container">
+            <div class="row blog_content_row">
+                <div class="col">
+                    <div class="blog_content">
+                        <div class="blog_post_title_container">
+                            <div class="blog_category"><a href="#">Python</a></div>
+                            <div class="blog_title">Исключения в python. Конструкция try - except для обработки исключений</div>
+                        </div>
+                        <div class="blog_text">
+                            <p>Исключения (exceptions) - ещё один тип данных в python. Исключения необходимы для того, чтобы сообщать программисту об ошибках.<p> Самый простейший пример исключения - деление на ноль:<p>  >>><p>>>> 100 / 0<p> Traceback (most recent call last):<p> File "", line 1, in<p> 100 / 0<p>  ZeroDivisionError: division by zero<p>   Разберём это сообщение подробнее: интерпретатор нам сообщает о том, что он поймал исключение и напечатал информацию (Traceback (most recent call last)).<p> Далее имя файла (File ""). Имя пустое, потому что мы находимся в интерактивном режиме, строка в файле (line 1);<p> Выражение, в котором произошла ошибка (100 / 0).<p>   Название исключения (ZeroDivisionError) и краткое описание исключения (division by zero).<p> Разумеется, возможны и другие исключения:<p>  >>><p>  >>> 2 + '1'<p> Traceback (most recent call last):<p>File "", line 1, in<p> 2 + '1'<p> TypeError: unsupported operand type(s) for +: 'int' and 'str'<p> >>> int('qwerty')<p> Traceback (most recent call last):<p> File "", line 1, in<p>int('qwerty')<p> ValueError: invalid literal for int() with base 10: 'qwerty'<p> В этих двух примерах генерируются исключения TypeError и ValueError соответственно. Подсказки дают нам полную информацию о том, где порождено исключение, и с чем оно связано.<p>Рассмотрим иерархию встроенных в python исключений, хотя иногда вам могут встретиться и другие, так как программисты могут создавать собственные исключения. Данный список актуален для python 3.3, в более ранних версиях есть незначительные изменения.<p> BaseException - базовое исключение, от которого берут начало все остальные.<p> *SystemExit - исключение, порождаемое функцией sys.exit при выходе из программы.<p> *KeyboardInterrupt - порождается при прерывании программы пользователем (обычно сочетанием клавиш Ctrl+C).<p>  *GeneratorExit - порождается при вызове метода close объекта generator.<p>   *Exception - а вот тут уже заканчиваются полностью системные исключения (которые лучше не трогать) и начинаются обыкновенные, с которыми можно работать.<p>  *StopIteration - порождается встроенной функцией next, если в итераторе больше нет элементов.<p>  *ArithmeticError - арифметическая ошибка.<p>  *FloatingPointError - порождается при неудачном выполнении операции с плавающей запятой. На практике встречается нечасто.<p>  *OverflowError - возникает, когда результат арифметической операции слишком велик для представления. Не появляется при обычной работе с целыми числами (так как python поддерживает длинные числа), но может возникать в некоторых других случаях.<p>  *ZeroDivisionError - деление на ноль.<p> *AssertionError - выражение в функции assert ложно.<p>  *AttributeError - объект не имеет данного атрибута (значения или метода).<p>  *BufferError - операция, связанная с буфером, не может быть выполнена.<p>  *EOFError - функция наткнулась на конец файла и не смогла прочитать то, что хотела.<p>  *ImportError - не удалось импортирование модуля или его атрибута.<p>  *LookupError - некорректный индекс или ключ.<p>  *IndexError - индекс не входит в диапазон элементов.<p>   *KeyError - несуществующий ключ (в словаре, множестве или другом объекте).<p>*MemoryError - недостаточно памяти.<p>*NameError - не найдено переменной с таким именем.<p>*UnboundLocalError - сделана ссылка на локальную переменную в функции, но переменная не определена ранее.<p>*OSError - ошибка, связанная с системой.<p>*BlockingIOError<p>*ChildProcessError - неудача при операции с дочерним процессом.<p>*ConnectionError - базовый класс для исключений, связанных с подключениями.<p>*BrokenPipeError<p>*ConnectionAbortedError<p>*ConnectionRefusedError<p>*ConnectionResetError<p>*FileExistsError - попытка создания файла или директории, которая уже существует.<p>*FileNotFoundError - файл или директория не существует.<p>*InterruptedError - системный вызов прерван входящим сигналом.<p>*IsADirectoryError - ожидался файл, но это директория.<p>*NotADirectoryError - ожидалась директория, но это файл.<p>*PermissionError - не хватает прав доступа.<p>*ProcessLookupError - указанного процесса не существует.<p>*TimeoutError - закончилось время ожидания.<p>*ReferenceError - попытка доступа к атрибуту со слабой ссылкой.<p>*RuntimeError - возникает, когда исключение не попадает ни под одну из других категорий.<p>*NotImplementedError - возникает, когда абстрактные методы класса требуют переопределения в дочерних классах.<p> *SyntaxError - синтаксическая ошибка.<p>*IndentationError - неправильные отступы.<p> *TabError - смешивание в отступах табуляции и пробелов.<p> *SystemError - внутренняя ошибка.<p> *TypeError - операция применена к объекту несоответствующего типа.<p>*ValueError - функция получает аргумент правильного типа, но некорректного значения.<p> *UnicodeError - ошибка, связанная с кодированием / раскодированием unicode в строках.<p>*UnicodeEncodeError - исключение, связанное с кодированием unicode.<p>*UnicodeDecodeError - исключение, связанное с декодированием unicode.<p>  *UnicodeTranslateError - исключение, связанное с переводом unicode.<p>  *Warning - предупреждение.<p>  Теперь, зная, когда и при каких обстоятельствах могут возникнуть исключения, мы можем их обрабатывать. Для обработки исключений используется конструкция try - except.<p>  Первый пример применения этой конструкции:<p>  >>><p>  >>> try:<p>  ...     k = 1 / 0<p>   ... except ZeroDivisionError:<p>   ...     k = 0<p>   ...<p>  >>> print(k)<p>  0<p>  В блоке try мы выполняем инструкцию, которая может породить исключение, а в блоке except мы перехватываем их. При этом перехватываются как само исключение, так и его потомки. Например, перехватывая ArithmeticError, мы также перехватываем FloatingPointError, OverflowError и ZeroDivisionError.<p>  >>><p>  >>> try:<p>  ...     k = 1 / 0<p>  ... except ArithmeticError:<p>  ...     k = 0<p>  ...<p>  >>> print(k)<p>  0<p>  Также возможна инструкция except без аргументов, которая перехватывает вообще всё (и прерывание с клавиатуры, и системный выход и т. д.). Поэтому в такой форме инструкция except практически не используется, а используется except Exception. Однако чаще всего перехватывают исключения по одному, для упрощения отладки (вдруг вы ещё другую ошибку сделаете, а except её перехватит).<p>  Ещё две инструкции, относящиеся к нашей проблеме, это finally и else. Finally выполняет блок инструкций в любом случае, было ли исключение, или нет (применима, когда нужно непременно что-то сделать, к примеру, закрыть файл). Инструкция else выполняется в том случае, если исключения не было.<p> >>> f = open('1.txt')<p> >>> ints = []<p> >>> try:<p>  ...     for line in f:<p> ...         ints.append(int(line))<p> ... except ValueError:<p>  ...     print('Это не число. Выходим.')<p>   ... except Exception:<p>   ...     print('Это что ещё такое?')<p>  ... else:<p>  ...     print('Всё хорошо.')<p>  ... finally:<p>  ...     f.close()<p>  ...     print('Я закрыл файл.')<p>  ...     # Именно в таком порядке: try, группа except, затем else, и только потом finally.<p>  ...<p>  Это не число. Выходим.<p>  Я закрыл файл.</p>
+                        </div>
+                        <div class="blog_tags">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="copyright_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
+							<div class="cr">
+                                <a>© ООО «Основы ЯП» 2020 <br/>
+                                Выполнил: Любимов С.А. (ИС-333) </a>
+							</div>
+							<div class="cr_right ml-md-auto">
+								<div class="footer_phone"><span class="cr_title">Позвоните нам</span>8(888-888-88-88) </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js/blog_single.js"></script>
+
+</html>

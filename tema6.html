@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>tema6</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="tema6">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link href="plugins/video-js/video-js.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/blog_single.css">
+    <link rel="stylesheet" type="text/css" href="styles/blog_single_responsive.css">
+</head>
+<body>
+
+<div class="super_container">
+
+
+    <header class="header">
+
+        <div class="header_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo_container mr-auto">
+                                <a href="#">
+                                    <div class="logo_text"><a href="index.html">Основы программирования</a></div>
+                                </a>
+                            </div>
+                            <nav class="main_nav_contaner">
+                                <ul class="main_nav">
+                                    <li class="active"><a href="index.html">Главная</a></li>
+                                    <li><a href="courses.html">Темы</a></li>
+                                    <li><a href="instructors.html">Инструкция</a></li>
+                                    <li><a href="blog.html">Новости</a></li>
+                                </ul>
+                            </nav>
+                            <div class="header_content_right ml-auto text-right">
+                                <div class="header_search">
+                                    <div class="search_form_container">
+                                        <form action="#" id="search_form" class="search_form trans_400">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="blog_top_image">
+        <div class="blog_top">
+            <div class="blog_background parallax-window" data-parallax="scroll" data-image-src="images/python_logo_back.jpeg" data-speed="0.8"></div>
+        </div>
+    </div>
+
+    <div class="blog_container">
+        <div class="container">
+            <div class="row blog_content_row">
+                <div class="col">
+                    <div class="blog_content">
+                        <div class="blog_post_title_container">
+                            <div class="blog_category"><a href="#">Python</a></div>
+                            <div class="blog_title">Списки (list). Функции и методы списков</div>
+                        </div>
+                        <div class="blog_text">
+                            <p>Что такое списки?<p>Списки в Python - упорядоченные изменяемые коллекции объектов произвольных типов (почти как массив, но типы могут отличаться).<p>Чтобы использовать списки, их нужно создать. Создать список можно несколькими способами. Например, можно обработать любой итерируемый объект (например, строку) встроенной функцией list:<p>>>><p>>>> list('список')<p>['с', 'п', 'и', 'с', 'о', 'к']<p> Список можно создать и при помощи литерала:<p> >>><p> >>> s = []  # Пустой список<p> >>> l = ['s', 'p', ['isok'], 2]<p> >>> s<p> []<p> >>> l<p> ['s', 'p', ['isok'], 2]<p> Как видно из примера, список может содержать любое количество любых объектов (в том числе и вложенные списки), или не содержать ничего.<p>  И еще один способ создать список - это генераторы списков. Генератор списков - способ построить новый список, применяя выражение к каждому элементу последовательности. Генераторы списков очень похожи на цикл for.<p> >>><p> >>> c = [c * 3 for c in 'list']<p> >>> c<p> ['lll', 'iii', 'sss', 'ttt']<p>Возможна и более сложная конструкция генератора списков:<p> >>><p> >>> c = [c * 3 for c in 'list' if c != 'i']<p> >>> c<p> ['lll', 'sss', 'ttt']<p> >>> c = [c + d for c in 'list' if c != 'i' for d in 'spam' if d != 'a']<p> >>> c<p> ['ls', 'lp', 'lm', 'ss', 'sp', 'sm', 'ts', 'tp', 'tm']<p> Но в сложных случаях лучше пользоваться обычным циклом for для генерации списков.<p> Функции и методы списков<p> Создать создали, теперь нужно со списком что-то делать. Для списков доступны основные встроенные функции, а также методы списков.<p>  *list.append(x)	Добавляет элемент в конец списка<p>  *list.extend(L)	Расширяет список list, добавляя в конец все элементы списка L<p>  *list.insert(i, x)	Вставляет на i-ый элемент значение x<p>  *list.remove(x)	Удаляет первый элемент в списке, имеющий значение x. ValueError, если такого элемента не существует<p>  *list.pop([i])	Удаляет i-ый элемент и возвращает его. Если индекс не указан, удаляется последний элемент<p>  *list.index(x, [start [, end]])	Возвращает положение первого элемента со значением x (при этом поиск ведется от start до end)<p>  *list.count(x)	Возвращает количество элементов со значением x<p> *list.sort([key=функция])	Сортирует список на основе функции<p>  *list.reverse()	Разворачивает список<p>  *list.copy()	Поверхностная копия списка<p>  *list.clear()	Очищает список</p>
+                        </div>
+                        <div class="blog_tags">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="copyright_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
+							<div class="cr">
+                                <a>© ООО «Основы ЯП» 2020 <br/>
+                                Выполнил: Любимов С.А. (ИС-333) </a>
+							</div>
+							<div class="cr_right ml-md-auto">
+								<div class="footer_phone"><span class="cr_title">Позвоните нам</span>8(888-888-88-88) </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js/blog_single.js"></script>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>tema9</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="tema9">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link href="plugins/video-js/video-js.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/blog_single.css">
+    <link rel="stylesheet" type="text/css" href="styles/blog_single_responsive.css">
+</head>
+<body>
+
+<div class="super_container">
+
+
+    <header class="header">
+
+        <div class="header_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo_container mr-auto">
+                                <a href="#">
+                                    <div class="logo_text"><a href="index.html">Основы программирования</a></div>
+                                </a>
+                            </div>
+                            <nav class="main_nav_contaner">
+                                <ul class="main_nav">
+                                    <li class="active"><a href="index.html">Главная</a></li>
+                                    <li><a href="courses.html">Темы</a></li>
+                                    <li><a href="instructors.html">Инструкция</a></li>
+                                    <li><a href="blog.html">Новости</a></li>
+                                </ul>
+                            </nav>
+                            <div class="header_content_right ml-auto text-right">
+                                <div class="header_search">
+                                    <div class="search_form_container">
+                                        <form action="#" id="search_form" class="search_form trans_400">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="blog_top_image">
+        <div class="blog_top">
+            <div class="blog_background parallax-window" data-parallax="scroll" data-image-src="images/python_logo_back.jpeg" data-speed="0.8"></div>
+        </div>
+    </div>
+
+    <div class="blog_container">
+        <div class="container">
+            <div class="row blog_content_row">
+                <div class="col">
+                    <div class="blog_content">
+                        <div class="blog_post_title_container">
+                            <div class="blog_category"><a href="#">Python</a></div>
+                            <div class="blog_title">Объектно-ориентированное программирование. Классы и объекты</div>
+                        </div>
+                        <div class="blog_text">
+                            <p>Объектно-ориентированное программирование (ООП) — парадигма программирования, в которой основными концепциями являются понятия объектов и классов.<p>Класс — тип, описывающий устройство объектов. Объект — это экземпляр класса. Класс можно сравнить с чертежом, по которому создаются объекты.<p>Python соответствует принципам объектно-ориентированного программирования. В python всё является объектами - и строки, и списки, и словари, и всё остальное.<p>Но возможности ООП в python этим не ограничены. Программист может написать свой тип данных (класс), определить в нём свои методы.<p>Это не является обязательным - мы можем пользоваться только встроенными объектами. Однако ООП полезно при долгосрочной разработке программы несколькими людьми, так как упрощает понимание кода.<p>Приступим теперь собственно к написанию своих классов на python. Попробуем определить собственный класс:<p>>>><p>>>> # Пример простейшего класса, который ничего не делает<p>... class A:<p>...     pass<p>Теперь мы можем создать несколько экземпляров этого класса:<p>>>><p>>>> a = A()<p>>>> b = A()<p>>>> a.arg = 1  # у экземпляра a появился атрибут arg, равный 1<p>>>> b.arg = 2  # а у экземпляра b - атрибут arg, равный 2<p>>>> print(a.arg)<p>1<p>>>> print(b.arg)<p> 2<p>>>> c = A()<p>Traceback (most recent call last):<p>File "stdin", line 1, in module<p>AttributeError: 'A' object has no attribute 'arg'<p>Классу возможно задать собственные методы:<p>>>><p>>>> class A:<p>...     def g(self): # self - обязательный аргумент, содержащий в себе экземпляр<p>...                  # класса, передающийся при вызове метода,<p>...                  # поэтому этот аргумент должен присутствовать<p>...                  # во всех методах класса.<p>...         return 'hello world'<p>...<p> >>> a = A()<p>>>> a.g()<p>'hello world'<p>И напоследок еще один пример:<p>>>><p> >>> class B:<p> ...     arg = 'Python' # Все экземпляры этого класса будут иметь атрибут arg,<p> ...                    # равный "Python"<p> ...                    # Но впоследствии мы его можем изменить<p> ...     def g(self):<p> ...         return self.arg<p> ...<p>  >>> b = B()<p>  >>> b.g()<p>  'Python'<p> >>> B.g(b)<p> 'Python'<p> >>> b.arg = 'spam'<p> >>> b.g()<p>'spam'</p>
+                        </div>
+                        <div class="blog_tags">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="copyright_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
+							<div class="cr">
+                                <a>© ООО «Основы ЯП» 2020 <br/>
+                                Выполнил: Любимов С.А. (ИС-333) </a>
+							</div>
+							<div class="cr_right ml-md-auto">
+								<div class="footer_phone"><span class="cr_title">Позвоните нам</span>8(888-888-88-88) </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js/blog_single.js"></script>
+
+</html>

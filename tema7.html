@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>tema7</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="tema7">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link href="plugins/video-js/video-js.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/blog_single.css">
+    <link rel="stylesheet" type="text/css" href="styles/blog_single_responsive.css">
+</head>
+<body>
+
+<div class="super_container">
+
+
+    <header class="header">
+
+        <div class="header_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo_container mr-auto">
+                                <a href="#">
+                                    <div class="logo_text"><a href="index.html">Основы программирования</a></div>
+                                </a>
+                            </div>
+                            <nav class="main_nav_contaner">
+                                <ul class="main_nav">
+                                    <li class="active"><a href="index.html">Главная</a></li>
+                                    <li><a href="courses.html">Темы</a></li>
+                                    <li><a href="instructors.html">Инструкция</a></li>
+                                    <li><a href="blog.html">Новости</a></li>
+                                </ul>
+                            </nav>
+                            <div class="header_content_right ml-auto text-right">
+                                <div class="header_search">
+                                    <div class="search_form_container">
+                                        <form action="#" id="search_form" class="search_form trans_400">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="blog_top_image">
+        <div class="blog_top">
+            <div class="blog_background parallax-window" data-parallax="scroll" data-image-src="images/python_logo_back.jpeg" data-speed="0.8"></div>
+        </div>
+    </div>
+
+    <div class="blog_container">
+        <div class="container">
+            <div class="row blog_content_row">
+                <div class="col">
+                    <div class="blog_content">
+                        <div class="blog_post_title_container">
+                            <div class="blog_category"><a href="#">Python</a></div>
+                            <div class="blog_title">Функции и их аргументы</div>
+                        </div>
+                        <div class="blog_text">
+                            <p>Именные функции, инструкция def<p>Функция в python - объект, принимающий аргументы и возвращающий значение. Обычно функция определяется с помощью инструкции def.<p> Определим простейшую функцию:<p>def add(x, y):<p>return x + y<p>Инструкция return говорит, что нужно вернуть значение. В нашем случае функция возвращает сумму x и y.<p>Теперь мы ее можем вызвать:<p>>>><p>>>> add(1, 10)<p>11<p>>>> add('abc', 'def')<p>'abcdef'<p>Функция может быть любой сложности и возвращать любые объекты (списки, кортежи, и даже функции!):<p> >>><p> >>> def newfunc(n):<p> ...     def myfunc(x):<p> ...         return x + n<p>  ...     return myfunc<p>  ...<p>  >>> new = newfunc(100)  # new - это функция<p>  >>> new(200)<p>  300<p> Функция может и не заканчиваться инструкцией return, при этом функция вернет значение None:<p> >>><p>  >>> def func():<p> ...     pass<p> ...<p> >>> print(func())<p> None<p>  Аргументы функции<p>  Функция может принимать произвольное количество аргументов или не принимать их вовсе. Также распространены функции с произвольным числом аргументов, функции с позиционными и именованными аргументами, обязательными и необязательными.<p>  >>><p>  >>> def func(a, b, c=2): # c - необязательный аргумент<p> ...     return a + b + c<p>  ...<p>  >>> func(1, 2)  # a = 1, b = 2, c = 2 (по умолчанию)<p>  5<p>  >>> func(1, 2, 3)  # a = 1, b = 2, c = 3<p>  6<p>  >>> func(a=1, b=3)  # a = 1, b = 3, c = 2<p>  6<p> >>> func(a=3, c=6)  # a = 3, c = 6, b не определен<p>  Traceback (most recent call last):<p>  File "", line 1, in<p>  func(a=3, c=6)<p>  TypeError: func() takes at least 2 arguments (2 given)<p> Функция также может принимать переменное количество позиционных аргументов, тогда перед именем ставится *:<p> >>><p>  >>> def func(*args):<p>   ...     return args<p>  ...<p>  >>> func(1, 2, 3, 'abc')<p>  (1, 2, 3, 'abc')<p>  >>> func()<p>   ()<p>   >>> func(1)<p>  (1,)<p>  Как видно из примера, args - это кортеж из всех переданных аргументов функции, и с переменной можно работать также, как и с кортежем.<p> Функция может принимать и произвольное число именованных аргументов, тогда перед именем ставится **:<p> >>><p> >>> def func(**kwargs):<p>  ...     return kwargs<p>  ...<p>  >>> func(a=1, b=2, c=3)<p>  {'a': 1, 'c': 3, 'b': 2}<p>  >>> func()<p>  {}<p>  >>> func(a='python')<p>  {'a': 'python'}<p>  В переменной kwargs у нас хранится словарь, с которым мы, опять-таки, можем делать все, что нам заблагорассудится.<p>  Анонимные функции, инструкция lambda<p>  Анонимные функции могут содержать лишь одно выражение, но и выполняются они быстрее. Анонимные функции создаются с помощью инструкции lambda. Кроме этого, их не обязательно присваивать переменной, как делали мы инструкцией def func():<p>  >>><p>  >>> func = lambda x, y: x + y<p>  >>> func(1, 2)<p>  3<p>  >>> func('a', 'b')<p> 'ab'<p>  >>> (lambda x, y: x + y)(1, 2)<p> 3<p> >>> (lambda x, y: x + y)('a', 'b')<p> 'ab'<p> lambda функции, в отличие от обычной, не требуется инструкция return, а в остальном, ведет себя точно так же:<p> >>><p>>>> func = lambda *args: args<p>>>> func(1, 2, 3, 4)<p> (1, 2, 3, 4)</p>
+                        </div>
+                        <div class="blog_tags">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="copyright_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
+							<div class="cr">
+                                <a>© ООО «Основы ЯП» 2020 <br/>
+                                Выполнил: Любимов С.А. (ИС-333) </a>
+							</div>
+							<div class="cr_right ml-md-auto">
+								<div class="footer_phone"><span class="cr_title">Позвоните нам</span>8(888-888-88-88) </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js/blog_single.js"></script>
+
+</html>

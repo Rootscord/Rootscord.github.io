@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>tema4</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="tema4">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link href="plugins/video-js/video-js.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="styles/blog_single.css">
+    <link rel="stylesheet" type="text/css" href="styles/blog_single_responsive.css">
+</head>
+<body>
+
+<div class="super_container">
+
+    <header class="header">
+
+        <div class="header_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo_container mr-auto">
+                                <a href="#">
+                                    <div class="logo_text"><a href="index.html">Основы программирования</a></div>
+                                </a>
+                            </div>
+                            <nav class="main_nav_contaner">
+                                <ul class="main_nav">
+                                    <li class="active"><a href="index.html">Главная</a></li>
+                                    <li><a href="courses.html">Темы</a></li>
+                                    <li><a href="instructors.html">Инструкция</a></li>
+                                    <li><a href="blog.html">Новости</a></li>
+                                </ul>
+                            </nav>
+                            <div class="header_content_right ml-auto text-right">
+                                <div class="header_search">
+                                    <div class="search_form_container">
+                                        <form action="#" id="search_form" class="search_form trans_400">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="blog_top_image">
+        <div class="blog_top">
+            <div class="blog_background parallax-window" data-parallax="scroll" data-image-src="images/python_logo_back.jpeg" data-speed="0.8"></div>
+        </div>
+    </div>
+
+    <div class="blog_container">
+        <div class="container">
+            <div class="row blog_content_row">
+                <div class="col">
+                    <div class="blog_content">
+                        <div class="blog_post_title_container">
+                            <div class="blog_category"><a href="#">Python</a></div>
+                            <div class="blog_title">Циклы for и while, операторы break и continue, волшебное слово else</div>
+                        </div>
+                        <div class="blog_text">
+                            <p>Цикл while
+                            <p>While - один из самых универсальных циклов в Python, поэтому довольно медленный. Выполняет тело цикла до тех пор, пока условие цикла истинно.<p>>>><p> >>> i = 5<p>>>> while i < 15:<p> ...     print(i)<p>...     i = i + 2<p>...<p> 5<p> 7<p> 9<p> 11<p> 13<p>Цикл for<p>Цикл for уже чуточку сложнее, чуть менее универсальный, но выполняется гораздо быстрее цикла while. Этот цикл проходится по любому итерируемому объекту (например строке или списку), и во время каждого прохода выполняет тело цикла.<p>>>><p>>>> for i in 'hello world':<p>...     print(i * 2, end='')<p>...<p> hheelllloo  wwoorrlldd<p> Оператор continue<p> Оператор continue начинает следующий проход цикла, минуя оставшееся тело цикла (for или while)<p>>>><p> >>> for i in 'hello world':<p> ...     if i == 'o':<p>...         continue<p>...     print(i * 2, end='')<p> ...<p>hheellll  wwrrlldd<p>Оператор break<p> Оператор break досрочно прерывает цикл.<p>>>><p>>>> for i in 'hello world':<p>...     if i == 'o':<p>...         break<p> ...     print(i * 2, end='')<p> ...<p>hheellll<p> Волшебное слово else<p> Слово else, примененное в цикле for или while, проверяет, был ли произведен выход из цикла инструкцией break, или же "естественным" образом. Блок инструкций внутри else выполнится только в том случае, если выход из цикла произошел без помощи break.<p> >>><p> >>> for i in 'hello world':<p> ...     if i == 'a':<p> ...         break<p>... else:<p> ...     print('Буквы a в строке нет')<p> ...<p> Буквы a в строке нет</p>
+                        </div>
+                        <div class="blog_tags">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="copyright_content d-flex flex-md-row flex-column align-items-md-center align-items-start justify-content-start">
+							<div class="cr">
+                                <a>© ООО «Основы ЯП» 2020 <br/>
+                                Выполнил: Любимов С.А. (ИС-333) </a>
+							</div>
+							<div class="cr_right ml-md-auto">
+								<div class="footer_phone"><span class="cr_title">Позвоните нам</span>8(888-888-88-88) </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js/blog_single.js"></script>
+
+</html>
